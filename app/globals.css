@@ -17,5 +17,31 @@
   
   --grid-template-columns-auto:repeat(auto-fit,minmax(200px, 1fr));
   --darkMode:'selector' ;
+
   
+  
+}
+/* Add these Swiper styles */
+.swiper-pagination-bullet {
+  background-color: #6b7280;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3b82f6;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.dark .swiper-pagination-bullet {
+  background-color: #d1d5db;
+  opacity: 0.8;
+}
+
+.dark .swiper-pagination-bullet-active {
+  background-color: #60a5fa;
+  opacity: 1;
+
+
 }

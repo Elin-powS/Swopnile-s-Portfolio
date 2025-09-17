@@ -6,7 +6,7 @@ import Education from "@/Components/Education";
 import Footer from "@/Components/Footer";
 import Header from "@/Components/Header";
 import Navbar from "@/Components/Navbar";
-import Services from "@/Components/Services";
+import Services from "@/Components/Experiences";
 import Work from "@/Components/Work";
 import { useState, useEffect, useCallback } from "react";
 

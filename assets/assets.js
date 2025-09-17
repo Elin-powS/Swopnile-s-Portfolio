@@ -10,6 +10,7 @@ import firebase from './firebase.png';
 import figma from './figma.png';
 import git from './git.png';
 import mongodb from './mongodb.png';
+import cvat from './CVAT.png';
 import right_arrow_white from './right-arrow-white.png';
 import logo from './logo.png';
 import logo_dark from './logo_dark.png';
@@ -27,8 +28,6 @@ import menu_black from './menu-black.png';
 import menu_white from './menu-white.png';
 import close_black from './close-black.png';
 import close_white from './close-white.png';
-import web_icon from './web-icon.png';
-import mobile_icon from './mobile-icon.png';
 import ui_icon from './ui-icon.png';
 import graphics_icon from './graphics-icon.png';
 import right_arrow from './right-arrow.png';
@@ -39,8 +38,6 @@ import android_icon from './android-studio-icon.png';
 import jupyter_notebook_icon from './jupyter-notebook-icon.png';
 import pytorch_icon from './pytorch-icon.png';
 import tensorflow_icon from './tensorflow-icon.png';
-import assesment_icon from './assesment-icon-3.png';
-import ml_icon from './ML-icon.png';
 import kuet_icon from './KUET.png';
 import kngc_icon from './Kabi-Nazrul-Government-College.png';
 import  jisc_icon from './Jatrabari-Ideal-School-&-College.png';
@@ -48,6 +45,10 @@ import fb_icon from './facebook-icon.png';
 import fb_icon_dark from './facebook-icon-dark.png';
 import instra_icon from './instragram-icon.png';
 import instra_icon_dark from './instragram-icon-dark.png';
+import ostad_logo from './Ostad.png';
+import transformsAI_logo from './TransformsAI.png';
+import cognifyz_logo from './Cognifyz.png';
+import bitfest_logo from './Bitfest.png';
 
 
 
@@ -65,6 +66,7 @@ export const assets = {
     figma,
     git,
     mongodb,
+    cvat,
     right_arrow_white,
     logo,
     logo_dark,
@@ -82,8 +84,6 @@ export const assets = {
     menu_white,
     close_black,
     close_white,
-    web_icon,
-    mobile_icon,
     ui_icon,
     graphics_icon,
     right_arrow,
@@ -91,11 +91,9 @@ export const assets = {
     right_arrow_bold,
     right_arrow_bold_dark,
     android_icon,
-    assesment_icon,
     pytorch_icon,
     tensorflow_icon,
     jupyter_notebook_icon,
-    ml_icon,
     kuet_icon,
     kngc_icon,
     jisc_icon,
@@ -103,6 +101,10 @@ export const assets = {
     fb_icon_dark ,
     instra_icon  ,
     instra_icon_dark,
+    ostad_logo,
+    transformsAI_logo,
+    cognifyz_logo,
+    bitfest_logo,
 };
 
 export const workData = [
@@ -132,18 +134,45 @@ export const workData = [
     },
 ]
 
-export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ml_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.assesment_icon, title: 'Assesment Project', description: 'Creative design solutions to enhance visual communication...', link: '' },
-]
+export const experienceData = [
+    { 
+        icon: assets.transformsAI_logo, 
+        title: 'TransformsAI', 
+        description: 'Junior AI/ML Engineer - Computer Vision.\nApril 2025 – Present', 
+        link: '' 
+    },
+    { 
+        icon: assets.ostad_logo, 
+        title: 'Ostad', 
+        description: 'Teaching Assistant - AI Agent Development with No Code Tool for Non-Coders.\n August 2025 – Present', 
+        link: '' 
+    },
+    { 
+        icon: assets.cognifyz_logo, 
+        title: 'Cognifyz Technologies', 
+        description: 'AI/ML Intern. Worked on various ML assignments, with a focus on AI and data processing.\nFeb 2025 – April 2025', 
+        link: '' 
+    },
+    { 
+        icon: assets.kuet_icon, 
+        title: 'Class Representative', 
+        description: 'Served as the Class Representative during my first and final years of academic life. \n2020-2021 and 2024-2025',
+        link: '' 
+    },
+    {
+        icon: assets.bitfest_logo, 
+        title: 'Senior Executive Member, Bitfest 2025', 
+        description: 'Played a key role as a Senior Executive Member in KUET CSE’s largest event, Bitfest 2025.',
+        link: '' 
+    }
+];
+
 export const educationData =[
     {
         icon: assets.kuet_icon,
         title: 'Khulna University of Engineering & Technology',
         description: 'BSc in Computer Science and Engineering',
-        more_description:' 2020 to Present '
+        more_description:' 2020 to 2025 '
       },
     {
       icon: assets.kngc_icon,
@@ -167,63 +196,81 @@ export const infoList = [
         description: 'BSc in Computer Science and Engineering. ',
         more_description:' Khulna University of Engineering and Technology. '
       },
-    {
-      icon: assets.code_icon,
-      iconDark: assets.code_icon_dark,
-      title: 'Languages and Tools',
-      description: 'C++, Python, Jave, HTML, CSS, JavaScript',
-      more_description:'React Js, Next Js, Laravel'
+      {
+        icon: assets.code_icon,
+        iconDark: assets.code_icon_dark,
+        title: 'Languages and Tools',
+        description: 'C, C++, Python, Java, HTML, CSS, JavaScript',
+        more_description: 'TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, Matplotlib,Android Studio,  React.js, Next.js, Laravel, Bootstrap, Tailwind CSS, PHP, Xcode, MySQL, Firebase, Oracle, PL/SQL, Git'
     },
     {
       icon: assets.project_icon,
       iconDark: assets.project_icon_dark,
-      title: 'AI/ML intern Cognifyz Technologies',
+      title: 'Junior ML/AI Engineer at TransformsAI',
       description: '',
-      more_description:'As an ML Intern, I optimized models for predicting ratings, classifying cuisines, and geographical analysis, honing skills in data preprocessing and model development.'
+      more_description:'As a Junior ML/AI Engineer, I develop computer vision models for real-time video analytics, including person detection, tracking, and facial recognition, while improving performance and integrating AI systems.'
 
     }
   ];
 
-/*
-public/Intern.pdf;
-*/
+export const achievementsData = [
+{
+  icon: assets.edu_icon,
+  iconDark: assets.edu_icon_dark,
+  backgroundImage: '/Python-Certificate-1.pdf', 
+  title: 'Programming for Everybody',
+  description: 'Getting Started with Python. Learn the basics about Python.',
+  more_description: '22.07.2020 - Completed the Coursera course "Programming for Everybody" which introduced me to the fundamentals of Python, including basic operations, variables, loops, and functions. This course helped me develop a solid foundation in Python programming.',
+  skills_gained: 'Acquired foundational knowledge in Python programming, covering basic operations, variables, loops, and functions.'
+},
+{
+  icon: assets.edu_icon,
+  iconDark: assets.edu_icon_dark,
+  backgroundImage: '/Python-Certificate-2.pdf', 
+  title: 'Python Data Structures',
+  description: 'Completed Python Data Structures course on Coursera.',
+  more_description: '29.07.2020 - Successfully completed the Python Data Structures course where I learned how to use various data structures such as lists, tuples, dictionaries, and sets. This course strengthened my problem-solving skills and allowed me to handle data more efficiently.',
+  skills_gained: 'Learned about essential data structures such as lists, tuples, dictionaries, and sets. Gained proficiency in handling and processing data efficiently.'
+},
+{
+  icon: assets.edu_icon,
+  iconDark: assets.edu_icon_dark,
+  backgroundImage: "/CR_Certificate.pdf",
+  title: "Class Representative for Department",
+  description: "Awarded for serving as the Class Representative of my Department.",
+  more_description: "Represented the class in academic matters, communicating between faculty and students and addressing student concerns. Additionally, I coordinated departmental events, which helped me develop skills in leadership, organization, and communication.",
+  skills_gained: "Developed strong leadership, communication, and time management skills. Enhanced my ability to manage tasks and communicate effectively in an academic setting."
+},
+{
+  icon: assets.edu_icon,
+  iconDark: assets.edu_icon_dark,
+  backgroundImage: "/Bitfest_Certificate.pdf",
+  title: "Senior Executive Member, Bitfest 2025",
+  description: "Recognized for my role as a Senior Executive Member in KUET CSE’s largest event, Bitfest 2025.",
+  more_description: "Contributed to the success of the Datathon event, held for the first time in KUET. I was actively involved in organizing event logistics, overseeing the food committee, and ensuring a smooth operation during the event. This experience taught me event management, collaboration, and leadership in a dynamic environment.",
+  skills_gained: "Gained experience in event management, teamwork, and strategic planning. Enhanced my organizational skills and problem-solving ability through hands-on participation in a high-scale event."
+},
+{
+  icon: assets.edu_icon,
+  iconDark: assets.edu_icon_dark,
+  backgroundImage: '/DataHead.pdf', 
+  title: 'Certificate - Team DataHead (4th Place)',
+  description: 'Awarded for teamwork in Synergy 2024 Datathon.',
+  more_description: '23.11.2024 - Participated in Synergy 2024 Datathon as a team member of DataHead. We successfully secured 4th place and learned essential data engineering and analysis techniques while solving real-world problems. This competition sparked my passion for data analysis and further solidified my career interest in data engineering.',
+  skills_gained: "Learned key data engineering and data analysis techniques. Developed an understanding of real-world data challenges and the importance of teamwork and strategic thinking in problem-solving."
+},
+{
+  icon: assets.edu_icon,
+  iconDark: assets.edu_icon_dark,
+  backgroundImage: '/Intern.pdf', 
+  title: 'Cognifyz Technologies Internship Offer',
+  description: 'Machine Learning internship offer at Cognifyz Technologies.',
+  more_description: '27.01.2025 - Received an internship offer from Cognifyz Technologies to work in machine learning. This opportunity enabled me to work on assignments related to AI, machine learning models, and data processing, offering hands-on experience in real-world projects. I gained deeper insights into industry-level problems and further honed my coding and machine learning skills.',
+  skills_gained: "Completed various assignments focused on machine learning, deepened knowledge in AI and data science, and gained practical experience working on industry-level problems. Further honed skills in coding, data processing, and model evaluation."
+}
+];
 
-  export const achievementsData =[
-    {
-        icon: assets.edu_icon,
-        iconDark: assets.edu_icon_dark,
-        backgroundImage: './Python-Certificate-1.pdf',
-        title: 'Programming for Everybody',
-        description: 'Getting Started with Python.Learn the Basic about python.',
-        more_description:'22.07.2020 '
-      },
-    {
-      icon: assets.edu_icon,
-      iconDark: assets.edu_icon_dark,
-      backgroundImage: './Python-Certificate-2.pdf' ,
-      title: ' Python Data Structures',
-      description: 'Completed the Python Data Structures course on Coursera, focusing on organizing and handling data efficiently.',
-      more_description:'29.07.2020'
-    },
-    {
-      icon: assets.edu_icon,
-      iconDark: assets.edu_icon_dark,
-      backgroundImage: './DataHead.pdf' ,
-      title: 'Certificate - Team DataHead (4th Place)',
-      description: 'Awarded for exceptional teamwork and contribution in securing 4th place in tackling complex data challenges as a member of Team DataHead during Synergy 2024.',
-      more_description:'23.11.2024'
-    },
-    {
-      icon: assets.edu_icon,
-      iconDark: assets.edu_icon_dark,
-      backgroundImage: './Intern.pdf' ,
-      title: 'Cognifyz Technologies Internship Offer',
-      description: 'Offered a Machine Learning internship at Cognifyz Technologies to work on data analysis and machine learning projects',
-      more_description:'27.01.2025'
-    }
-  ];
-    
 
 export const toolsData = [
-    assets.vscode, assets.firebase,assets.android_icon,assets.pytorch_icon,assets.tensorflow_icon,assets.jupyter_notebook_icon , assets.figma, assets.git
+    assets.vscode, assets.firebase,assets.android_icon,assets.pytorch_icon,assets.tensorflow_icon,assets.jupyter_notebook_icon , assets.figma, assets.git,assets.cvat, assets.mongodb
 ];

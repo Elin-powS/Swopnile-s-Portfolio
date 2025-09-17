@@ -36,10 +36,9 @@ const Education = ({ isDarkMode }) => {
           transition={{ duration: 0.5, delay: 0.7 }}
           className=" text-center max-w-2xl mx-auto mt-5 mb-12  font-Ovo"
         >
-          I am currently pursuing my undergraduate degree in Computer Science
-          and Engineering. At Khulna University of Engineering and Technology, I
-          am gaining strong foundations in programming, software development,
-          and problem-solving.
+        I am set to complete my undergraduate degree in Computer Science and Engineering at Khulna University of Engineering and 
+        Technology in August 2025. During my studies, I have gained strong foundations in programming, software development, 
+        problem-solving, as well as in Machine Learning (ML) and Artificial Intelligence (AI).
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}

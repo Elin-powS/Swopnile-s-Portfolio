@@ -71,16 +71,11 @@ const Navbar = ({isDarkMode,setIsDarkMode}) => {
             </a>
           </li>
           <li>
-            <a className="font-Outfit" href="#services">
-              Services
+            <a className="font-Outfit" href="#experiences">
+              Experiences
             </a>
           </li>
          
-          <li>
-            <a className="font-Outfit" href="#contact">
-              Contact
-            </a>
-          </li>
         </ul>
         <div className="flex gap-4">
           <button onClick={() => setIsDarkMode((prev) => !prev)}>
@@ -148,8 +143,8 @@ const Navbar = ({isDarkMode,setIsDarkMode}) => {
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#services">
-              Services
+            <a className="font-Ovo" onClick={closeMenu} href="#experiences">
+              Experiences
             </a>
           </li>
           
