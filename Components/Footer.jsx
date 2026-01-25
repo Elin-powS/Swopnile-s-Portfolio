@@ -45,11 +45,6 @@ const Footer = ({ isDarkMode }) => {
         <p>© 2025 Aciful Islam Khan. All rights reserve.</p>
         <ul className="md:flex items-center gap-10 justify-center mt-4 sm:mt-0">
           <li>
-            <a target="_blank" href="https://github.com/Elin-powS">
-              GitHub
-            </a>
-          </li>
-          <li>
             <a
               target="_blank"
               href="https://www.linkedin.com/in/aciful-islam-khan-swopnile-1b6462244/"
@@ -58,13 +53,23 @@ const Footer = ({ isDarkMode }) => {
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://www.kaggle.com/acifulsopnil">
-              Kaggle
+            <a target="_blank" href="https://github.com/Elin-powS">
+              GitHub
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://leetcode.com/u/sopnil493/">
+            <a target="_blank" href="https://leetcode.com/u/Elin_powS/">
               LeetCode
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://codeforces.com/profile/elin_pows/">
+              Codeforces
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.kaggle.com/acifulsopnil">
+              Kaggle
             </a>
           </li>
         </ul>

@@ -1,13 +1,15 @@
 "use client";
-import About from "@/Components/About";
-import Achievements from "@/Components/Achievements";
-import Contact from "@/Components/Contact";
-import Education from "@/Components/Education";
-import Footer from "@/Components/Footer";
-import Header from "@/Components/Header";
 import Navbar from "@/Components/Navbar";
-import Services from "@/Components/Experiences";
+import Header from "@/Components/Header";
+import About from "@/Components/About";
+import Education from "@/Components/Education";
 import Work from "@/Components/Work";
+import Achievements from "@/Components/Achievements";
+import Experiences from "@/Components/Experiences";
+import Contact from "@/Components/Contact";
+import Footer from "@/Components/Footer";
+
+
 import { useState, useEffect, useCallback } from "react";
 
 
@@ -41,9 +43,10 @@ export default function Home() {
     <Education isDarkMode={isDarkMode}/>
     <Work isDarkMode={isDarkMode}/>
     <Achievements isDarkMode={isDarkMode} />
-    <Services isDarkMode={isDarkMode}/>
+    <Experiences isDarkMode={isDarkMode}/>
     <Contact isDarkMode={isDarkMode}/>
     <Footer isDarkMode={isDarkMode}/>
+
     </>
   );
 }

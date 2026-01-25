@@ -13,7 +13,7 @@ const Header = () => {
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-        className="mt-30 max-sm:mt-90  "
+        className="mt-30 max-sm:mt-90"
       >
         <Image src={assets.profile_img} alt="" className="rounded-full w-44" />
       </motion.div>
@@ -32,7 +32,7 @@ const Header = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-3xl sm:text-6xl lg:text-[66px]  font-Ovo"
       >
-       Junior ML/AI Engineer at TransformsAI
+       Junior ML/AI Engineer at Transforms AI
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}

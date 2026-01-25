@@ -57,7 +57,7 @@ const About = ({ isDarkMode }) => {
     >
       <p className="mb-10 max-w-4xl font-Ovo text-justify">
         I am a recent graduate from Khulna University of Engineering and Technology (KUET) with a degree in 
-        Computer Science and Engineering. Currently, I work as an AI/ML Engineer – Computer Vision at TransformsAI, 
+        Computer Science and Engineering. Currently, I work as an AI/ML Engineer – Computer Vision at Transforms AI, 
         where I have contributed to various AI and machine learning projects, particularly in computer vision and edge optimization. 
         I also completed an internship at Cognifyz Technologies, where I gained hands-on experience in data analysis and machine learning.
 

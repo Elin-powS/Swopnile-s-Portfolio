@@ -15,7 +15,7 @@ const Experiences = ({ isDarkMode }) => {
         setCurrentIndex((prevIndex) => 
           prevIndex === experienceData.length - 1 ? 0 : prevIndex + 1
         );
-      }, 4000);
+      }, 3333);
     }
 
     return () => {
@@ -56,7 +56,7 @@ const Experiences = ({ isDarkMode }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="experiences"
-      className="w-full px-[12%] py-10 scroll-mt-35 min-lg:mt-20 min-lg:mb-50"
+      className="w-full px-[5%] py-10 scroll-mt-35 lg:px-[12%] lg:mt-20 lg:mb-50 overflow-hidden"
     >
       <motion.h4
         initial={{ y: -20, opacity: 0 }}
@@ -70,7 +70,7 @@ const Experiences = ({ isDarkMode }) => {
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="text-center text-5xl font-Ovo"
+        className="text-center text-3xl sm:text-4xl lg:text-5xl font-Ovo"
       >
         Professional Experiences
       </motion.h2>
@@ -78,22 +78,22 @@ const Experiences = ({ isDarkMode }) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.7 }}
-        className="text-center max-w-2xl mx-auto mt-4 mb-8 font-Ovo"
+        className="text-center max-w-2xl mx-auto mt-4 mb-8 font-Ovo px-4"
       >
         I have hands-on experience in AI/ML, computer vision, and software development. 
-        As an AI/ML Engineer at TransformsAI, I have worked on developing AI-driven solutions using
+        As an AI/ML Engineer at Transforms AI, I have worked on developing AI-driven solutions using
         TensorFlow, PyTorch, and other machine learning tools. I also gained valuable experience as
         an AI/ML Intern at Cognifyz Technologies. Additionally, I serve as a Teaching Assistant at Ostad, 
         assisting in the development of AI agents using no-code tools. I am passionate about leveraging technology 
         to build practical and impactful applications.
       </motion.p>
 
-      {/* 3D Carousel Container */}
+      {/* 3D Carousel Container - Mobile Optimized */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.9 }}
-        className="relative w-full my-8 h-[400px] flex items-center justify-center"
+        className="relative w-full my-8 h-[450px] sm:h-[400px] flex items-center justify-center overflow-visible"
         style={{ perspective: '1000px' }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -101,13 +101,13 @@ const Experiences = ({ isDarkMode }) => {
         {/* Navigation Arrows */}
         <button
           onClick={goToPrevious}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 
-                   bg-white dark:bg-gray-800 rounded-full p-3 shadow-xl 
+          className="absolute left-1 sm:left-4 top-1/2 transform -translate-y-1/2 z-20 
+                   bg-white dark:bg-gray-800 rounded-full p-2 sm:p-3 shadow-xl 
                    hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300
                    hover:scale-110"
         >
           <svg 
-            className="w-6 h-6 text-gray-700 dark:text-white" 
+            className="w-4 h-4 sm:w-6 sm:h-6 text-gray-700 dark:text-white" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -118,13 +118,13 @@ const Experiences = ({ isDarkMode }) => {
 
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 
-                   bg-white dark:bg-gray-800 rounded-full p-3 shadow-xl 
+          className="absolute right-1 sm:right-4 top-1/2 transform -translate-y-1/2 z-20 
+                   bg-white dark:bg-gray-800 rounded-full p-2 sm:p-3 shadow-xl 
                    hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300
                    hover:scale-110"
         >
           <svg 
-            className="w-6 h-6 text-gray-700 dark:text-white" 
+            className="w-4 h-4 sm:w-6 sm:h-6 text-gray-700 dark:text-white" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -134,7 +134,7 @@ const Experiences = ({ isDarkMode }) => {
         </button>
 
         {/* Cards Container */}
-        <div className="relative w-full max-w-6xl h-full flex items-center justify-center">
+        <div className="relative w-full h-full flex items-center justify-center">
           {getVisibleCards().map(({ icon, title, description, link, position, originalIndex }, index) => {
             const isCenter = position === 0;
             const isLeft = position === -1;
@@ -144,18 +144,18 @@ const Experiences = ({ isDarkMode }) => {
               <motion.div
                 key={`${originalIndex}-${currentIndex}`}
                 initial={{ 
-                  x: position * 300, 
-                  scale: isCenter ? 1 : 0.8,
-                  opacity: isCenter ? 1 : 0.6,
-                  rotateY: position * 15,
-                  translateZ: isCenter ? 0 : -50
+                  x: position * (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : 280), 
+                  scale: isCenter ? 1 : (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : 0.8),
+                  opacity: isCenter ? 1 : (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : 0.6),
+                  rotateY: typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : position * 15,
+                  translateZ: isCenter ? 0 : (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : -50)
                 }}
                 animate={{ 
-                  x: position * 280, 
-                  scale: isCenter ? 1 : 0.8,
-                  opacity: isCenter ? 1 : 0.6,
-                  rotateY: position * 15,
-                  translateZ: isCenter ? 0 : -50
+                  x: position * (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : 280), 
+                  scale: isCenter ? 1 : (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : 0.8),
+                  opacity: isCenter ? 1 : (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : 0.6),
+                  rotateY: typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : position * 15,
+                  translateZ: isCenter ? 0 : (typeof window !== 'undefined' && window.innerWidth < 640 ? 0 : -50)
                 }}
                 transition={{ 
                   duration: 0.6, 
@@ -163,8 +163,8 @@ const Experiences = ({ isDarkMode }) => {
                   type: "spring",
                   stiffness: 100
                 }}
-                className={`absolute w-80 cursor-pointer transform-gpu ${
-                  !isCenter ? 'pointer-events-none' : ''
+                className={`absolute w-[85%] sm:w-80 max-w-sm cursor-pointer transform-gpu ${
+                  !isCenter ? 'pointer-events-none hidden sm:block' : ''
                 }`}
                 style={{
                   filter: !isCenter ? 'blur(2px)' : 'blur(0px)',
@@ -174,7 +174,7 @@ const Experiences = ({ isDarkMode }) => {
                 whileHover={isCenter ? { scale: 1.05, y: -10 } : {}}
               >
                 <div
-                  className={`border border-gray-400 rounded-xl px-6 py-8 h-85 
+                  className={`border border-gray-400 rounded-xl px-4 sm:px-6 py-6 sm:py-8 min-h-[350px]
                            shadow-lg transition-all duration-500 backdrop-blur-sm
                            ${isCenter 
                              ? 'bg-white dark:bg-gray-800 shadow-2xl border-blue-200 dark:border-blue-800' 
@@ -184,24 +184,24 @@ const Experiences = ({ isDarkMode }) => {
                 >
                   <div>
                     {icon && (
-                      <div className="mb-4">
+                      <div className="mb-4 relative w-20 h-16 sm:w-30 sm:h-20">
                         <Image 
                           src={icon} 
                           alt={title || "Experience icon"} 
-                          className="w-30 h-20 object-contain" 
-                          width={48}
-                          height={48}
+                          fill
+                          className="object-contain"
                         />
                       </div>
                     )}
-                    <h3 className={`text-xl font-semibold my-3 transition-colors duration-300 ${
+
+                    <h3 className={`text-lg sm:text-xl font-semibold my-3 transition-colors duration-300 ${
                       isCenter 
                         ? 'text-gray-800 dark:text-white' 
                         : 'text-gray-600 dark:text-gray-300'
                     }`}>
                       {title}
                     </h3>
-                    <div className={`text-sm leading-6 transition-colors duration-300 ${
+                    <div className={`text-xs sm:text-sm leading-5 sm:leading-6 transition-colors duration-300 ${
                       isCenter 
                         ? 'text-gray-700 dark:text-gray-200' 
                         : 'text-gray-500 dark:text-gray-400'
@@ -218,11 +218,11 @@ const Experiences = ({ isDarkMode }) => {
                     <div className="mt-4">
                       <a 
                         href={link} 
-                        className="inline-flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 font-medium"
+                        className="inline-flex items-center gap-2 text-xs sm:text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 font-medium"
                       >
                         Read More
                         <svg 
-                          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                          className="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" 
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"
@@ -239,12 +239,12 @@ const Experiences = ({ isDarkMode }) => {
         </div>
 
         {/* Pagination Dots */}
-        <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        <div className="absolute -bottom-14 sm:-bottom-17 left-1/2 transform -translate-x-1/2 flex space-x-2 sm:space-x-3">
           {experienceData.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 ${
                 currentIndex === index 
                   ? 'bg-blue-600 dark:bg-blue-400 shadow-lg' 
                   : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
@@ -254,7 +254,7 @@ const Experiences = ({ isDarkMode }) => {
         </div>
 
         {/* Progress Bar */}
-        <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-64">
+        <div className="absolute -bottom-5 sm:-bottom-7 left-1/2 transform -translate-x-1/2 w-48 sm:w-64">
           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1">
             <div 
               className="bg-gradient-to-r from-blue-500 to-purple-600 h-1 rounded-full transition-all duration-300"

@@ -137,7 +137,7 @@ export const workData = [
 export const experienceData = [
     { 
         icon: assets.transformsAI_logo, 
-        title: 'TransformsAI', 
+        title: 'Transforms AI', 
         description: 'Junior AI/ML Engineer - Computer Vision.\nApril 2025 – Present', 
         link: '' 
     },
@@ -206,7 +206,7 @@ export const infoList = [
     {
       icon: assets.project_icon,
       iconDark: assets.project_icon_dark,
-      title: 'Junior ML/AI Engineer at TransformsAI',
+      title: 'Junior ML/AI Engineer at Transforms AI',
       description: '',
       more_description:'As a Junior ML/AI Engineer, I develop computer vision models for real-time video analytics, including person detection, tracking, and facial recognition, while improving performance and integrating AI systems.'
 
