@@ -23,7 +23,7 @@ A modern, full-featured personal portfolio built with **Next.js** and **React**,
 ## Features
 
 ### Sections
-- **Hero** — Animated introduction with links to contact and resume
+- **Home** — Animated introduction with links to contact and resume
 - **About** — Professional summary, skills info cards, and tools grid
 - **Education** — Degree details and academic highlights
 - **Projects** — Auto-sliding image carousel per card, demo video modal, image lightbox, tech tags, GitHub links, and paginated "See More / See Less"
