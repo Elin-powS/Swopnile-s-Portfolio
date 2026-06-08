@@ -3,7 +3,8 @@ import Navbar from "@/Components/Navbar";
 import Header from "@/Components/Header";
 import About from "@/Components/About";
 import Education from "@/Components/Education";
-import Work from "@/Components/Work";
+import Projects from "@/Components/Projects";
+import Publications from "@/Components/Publications";
 import Achievements from "@/Components/Achievements";
 import Experiences from "@/Components/Experiences";
 import Contact from "@/Components/Contact";
@@ -41,7 +42,8 @@ export default function Home() {
     <Header isDarkMode={isDarkMode} />
     <About isDarkMode={isDarkMode}/>
     <Education isDarkMode={isDarkMode}/>
-    <Work isDarkMode={isDarkMode}/>
+    <Projects isDarkMode={isDarkMode}/>
+     <Publications isDarkMode={isDarkMode}/>
     <Achievements isDarkMode={isDarkMode} />
     <Experiences isDarkMode={isDarkMode}/>
     <Contact isDarkMode={isDarkMode}/>

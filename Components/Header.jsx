@@ -14,6 +14,8 @@ const Header = () => {
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
         className="mt-30 max-sm:mt-90"
+        suppressHydrationWarning={true}
+
       >
         <Image src={assets.profile_img} alt="" className="rounded-full w-44" />
       </motion.div>
@@ -30,9 +32,9 @@ const Header = () => {
         initial={{ y: -30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="text-3xl sm:text-6xl lg:text-[66px]  font-Ovo"
+        className="text-3xl sm:text-6xl lg:text-[60px]  font-Ovo"
       >
-       Junior ML/AI Engineer at Transforms AI
+        AI Engineer at SOFOF TECH
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
@@ -40,25 +42,27 @@ const Header = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="max-w-2xl mx-auto font-Ovo"
       >
-        Passionate about Artificial Intelligence and Machine Learning, I am
-        dedicated to creating innovative, user-centric solutions. By exploring
-        web technologies like React.js, Next.js, and Node.js, I aim to build
-        powerful, future-ready applications. My focus on AI and ML enables me to
-        develop intelligent systems that solve complex problems, enhance user
-        experiences, and drive impactful technological change.
+        Passionate about Artificial Intelligence, Machine Learning, and AI
+        Automation, I am dedicated to building innovative and intelligent
+        solutions that solve real-world problems. My interests include machine
+        learning model development, AI agents, workflow automation, data
+        scraping, and intelligent system design. By working with modern AI
+        technologies and automation tools, I aim to create scalable, efficient,
+        and impactful systems that enhance productivity, improve user
+        experiences, and drive technological innovation.
       </motion.p>
       <div className=" flex flex-col sm:flex-row items-center gap-4 mt-4 ">
         <motion.a
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          href="#contact"
-          className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 
-          cursor-pointer  hover:-translate-y-1 dark:bg-transparent"
-        >
-          Contact Me{" "}
-          <Image src={assets.right_arrow_white} alt="" className="w-4" />
-        </motion.a>
+        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1 }}
+        href="#contact"
+        className="group px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 
+        cursor-pointer hover:-translate-y-1 dark:bg-transparent"
+      >
+        Contact Me{" "}
+        <Image src={assets.right_arrow_white} alt="" className="w-4 transition-transform duration-300 group-hover:-rotate-270" />
+      </motion.a>
         <motion.a
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}

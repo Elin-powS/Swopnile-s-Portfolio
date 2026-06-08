@@ -47,7 +47,7 @@ const Footer = ({ isDarkMode }) => {
           <li>
             <a
               target="_blank"
-              href="https://www.linkedin.com/in/aciful-islam-khan-swopnile-1b6462244/"
+              href="https://www.linkedin.com/in/aciful-islam-khan/"
             >
               LinkedIn
             </a>

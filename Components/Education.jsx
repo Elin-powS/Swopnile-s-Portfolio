@@ -12,6 +12,7 @@ const Education = ({ isDarkMode }) => {
         transition={{ duration: 1 }}
         id="education"
         className="w-full px-[12%] py-15 scroll-mt-35"
+        suppressHydrationWarning={true}
       >
         <motion.h4
           initial={{ y: -20, opacity: 0 }}
@@ -36,26 +37,29 @@ const Education = ({ isDarkMode }) => {
           transition={{ duration: 0.5, delay: 0.7 }}
           className=" text-center max-w-2xl mx-auto mt-5 mb-12  font-Ovo"
         >
-        I am set to complete my undergraduate degree in Computer Science and Engineering at Khulna University of Engineering and 
-        Technology in August 2025. During my studies, I have gained strong foundations in programming, software development, 
-        problem-solving, as well as in Machine Learning (ML) and Artificial Intelligence (AI).
+          I completed my undergraduate degree in Computer Science and
+          Engineering from Khulna University of Engineering and Technology in
+          August 2025. During my studies, I gained strong knowledge in
+          programming, software development, problem-solving, as well as Machine
+          Learning (ML) and Artificial Intelligence (AI).
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="grid grid-cols-auto gap-6 my-10">
+          className="grid grid-cols-auto gap-6 my-10"
+        >
           <motion.ul
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-full ">
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-full "
+          >
             {educationData.map(
               ({ icon, title, description, more_description }, index) => (
                 <motion.li
-                whileHover={{ scale: 1.05 }}
-                transition={{duration: 0.3}}
-
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
                   className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover
                              hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50 "
                   key={index}
@@ -71,7 +75,7 @@ const Education = ({ isDarkMode }) => {
                     {more_description}
                   </p>
                 </motion.li>
-              )
+              ),
             )}
           </motion.ul>
         </motion.div>

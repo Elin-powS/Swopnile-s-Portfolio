@@ -3,7 +3,7 @@ import { Fascinate } from "next/font/google";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
-const Navbar = ({isDarkMode,setIsDarkMode}) => {
+const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const [isScroll, setIsScroll] = useState(false);
   const sideMenuRef = useRef();
 
@@ -30,8 +30,11 @@ const Navbar = ({isDarkMode,setIsDarkMode}) => {
       </div>
       <nav
         className={`w-full fixed px-5 lg:px-8 xl:px-[6%] py-2 flex items-center justify-between z-50
-            ${isScroll ? "bg-white/50 shadow-sm  backdrop-blur-lg dark:bg-darkTheme dark:shadow-pink-500/80" : ""
-        }`}
+            ${
+              isScroll
+                ? "bg-white/50 shadow-sm  backdrop-blur-lg dark:bg-darkTheme dark:shadow-pink-500/80"
+                : ""
+            }`}
       >
         <a href="#top">
           <Image
@@ -42,7 +45,9 @@ const Navbar = ({isDarkMode,setIsDarkMode}) => {
         </a>
         <ul
           className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
-            isScroll ? "" : " bg-white/50 shadow-sm dark:border dark:border-white/50 dark:bg-transparent"
+            isScroll
+              ? ""
+              : " bg-white/50 shadow-sm dark:border dark:border-white/50 dark:bg-transparent"
           }`}
         >
           <li>
@@ -61,12 +66,17 @@ const Navbar = ({isDarkMode,setIsDarkMode}) => {
             </a>
           </li>
           <li>
-            <a className="font-Outfit" href="#work">
-              My Work
+            <a className="font-Outfit" href="#projects">
+              Projects
+            </a>
+          </li>
+           <li>
+            <a className="font-Outfit" href="#publications">
+              Publications
             </a>
           </li>
           <li>
-          <a className="font-Outfit" href="#achievements">
+            <a className="font-Outfit" href="#achievements">
               Achievements
             </a>
           </li>
@@ -75,31 +85,34 @@ const Navbar = ({isDarkMode,setIsDarkMode}) => {
               Experiences
             </a>
           </li>
-         
         </ul>
-        <div className="flex gap-4">
+        <div className="flex gap-4 ">
           <button onClick={() => setIsDarkMode((prev) => !prev)}>
             <Image
               src={isDarkMode ? assets.sun_icon : assets.moon_icon}
               alt=""
-              className="md:flex w-6"
+              className="md:flex w-6 "
             />
           </button>
           <a
             href="#contact"
-            className=" font-Ovo hidden lg:flex items-center gap-3 px-8 py-2.5 border cursor-pointer  hover:-translate-y-1
-                 hover:bg-lightHover border-gray-500 rounded-full ml-4 dark:border-white/50 dark:hover:bg-darkHover"
+            className="group font-Ovo hidden lg:flex items-center gap-3 px-8 py-2.5 border cursor-pointer hover:-translate-y-1
+       hover:bg-lightHover border-gray-500 rounded-full ml-4 dark:border-white/50 dark:hover:bg-darkHover"
           >
             Contact
             <Image
               src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon}
               alt=""
-              className="hidden md:flex items-center w-3"
+              className="hidden md:flex items-center w-3 transition-transform duration-300 group-hover:-rotate-225"
             />
           </a>
 
           <button className="block md:hidden ml-3" onClick={openMenu}>
-            <Image src={isDarkMode ? assets.menu_white : assets.menu_black} alt="" className="w-6" />
+            <Image
+              src={isDarkMode ? assets.menu_white : assets.menu_black}
+              alt=""
+              className="w-6"
+            />
           </button>
         </div>
 
@@ -134,12 +147,12 @@ const Navbar = ({isDarkMode,setIsDarkMode}) => {
           </li>
           <li>
             <a className=" font-Ovo" onClick={closeMenu} href="#work">
-              My Work
+              Projects
             </a>
           </li>
           <li>
             <a className=" font-Ovo" onClick={closeMenu} href="#achievements">
-             Achievements
+              Achievements
             </a>
           </li>
           <li>
@@ -147,9 +160,9 @@ const Navbar = ({isDarkMode,setIsDarkMode}) => {
               Experiences
             </a>
           </li>
-          
+
           <li>
-            <a className=" font-Ovo " onClick={closeMenu} href="#contact">
+            <a className=" font-Ovo" onClick={closeMenu} href="#contact">
               Contact
             </a>
           </li>
