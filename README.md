@@ -8,17 +8,6 @@ A modern, full-featured personal portfolio built with **Next.js** and **React**,
 
 ## Tech Stack
 
-<<<<<<< HEAD
-| Layer | Technology |
-|---|---|
-| Framework | Next.js (App Router) |
-| UI Library | React |
-| Styling | Tailwind CSS |
-| Animations | Framer Motion (`motion/react`) |
-| Form Handling | Web3Forms API |
-| Carousel | Swiper.js |
-| Deployment | Vercel |
-=======
 | Layer         | Technology                     |
 | ------------- | ------------------------------ |
 | Framework     | Next.js (App Router)           |
@@ -28,25 +17,12 @@ A modern, full-featured personal portfolio built with **Next.js** and **React**,
 | Form Handling | Web3Forms API                  |
 | Carousel      | Swiper.js                      |
 | Deployment    | Vercel                         |
->>>>>>> d57ed9b (Edit the ReadME file and also the navbar and contact section edited.)
 
 ---
 
 ## Features
 
 ### Sections
-<<<<<<< HEAD
-- **Home** — Animated introduction with links to contact and resume
-- **About** — Professional summary, skills info cards, and tools grid
-- **Education** — Degree details and academic highlights
-- **Projects** — Auto-sliding image carousel per card, demo video modal, image lightbox, tech tags, GitHub links, and paginated "See More / See Less"
-- **Publications** — Research papers with status badges (Published / Under Review / Preprint), expandable abstracts, tag filters, and DOI links
-- **Achievements** — Swiper carousel of certificates with PDF preview modal
-- **Experiences** — 3D card carousel with auto-advance and keyboard navigation
-- **Contact** — Functional contact form with email delivery via Web3Forms
-
-### UI/UX
-=======
 
 - **Home** — Animated introduction with links to contact and resume
 - **About** — Professional summary, skills info cards, and tools grid
@@ -59,7 +35,6 @@ A modern, full-featured personal portfolio built with **Next.js** and **React**,
 
 ### UI/UX
 
->>>>>>> d57ed9b (Edit the ReadME file and also the navbar and contact section edited.)
 - Dark / light mode toggle with instant theme switching
 - Fully responsive across mobile, tablet, and desktop
 - Smooth entrance animations using Framer Motion `whileInView`
@@ -152,18 +127,6 @@ Vercel automatically rebuilds on every push to `main`.
 
 All content is driven from `assets/assets.js`. To update the portfolio with your own data, edit the exported arrays:
 
-<<<<<<< HEAD
-| Export | Controls |
-|---|---|
-| `workData` | Projects section |
-| `publicationsData` | Publications section |
-| `achievementsData` | Achievements / certificates |
-| `experienceData` | Experiences carousel |
-| `educationData` | Education cards |
-| `infoList` | About info cards |
-| `toolsData` | Tools grid in About |
-| `assets` | All images and icons |
-=======
 | Export             | Controls                    |
 | ------------------ | --------------------------- |
 | `workData`         | Projects section            |
@@ -174,7 +137,6 @@ All content is driven from `assets/assets.js`. To update the portfolio with your
 | `infoList`         | About info cards            |
 | `toolsData`        | Tools grid in About         |
 | `assets`           | All images and icons        |
->>>>>>> d57ed9b (Edit the ReadME file and also the navbar and contact section edited.)
 
 ---
 
@@ -198,10 +160,6 @@ Attribution is appreciated but not required.
 
 ---
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d57ed9b (Edit the ReadME file and also the navbar and contact section edited.)
 ## Contact
 
 **Aciful Islam Khan**
