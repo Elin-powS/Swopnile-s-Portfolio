@@ -5,27 +5,38 @@ import { motion } from "motion/react";
 
 const Contact = ({ isDarkMode }) => {
   const [result, setResult] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    if (isSending) return;
+    const form = event.target;
+    setIsSending(true);
     setResult("Sending....");
-    const formData = new FormData(event.target);
-    
 
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const formData = new FormData(form);
+      formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
 
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        form.reset();
+      } else {
+        console.log("Error", data);
+        setResult(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.log("Error", error);
+      setResult(
+        "Could not send your message. Please check your connection and try again.",
+      );
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -35,7 +46,7 @@ const Contact = ({ isDarkMode }) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="contact"
-      className='w-full px-[12%] py-10 scroll-mt-30 min-lg:mt-20 min-lg:mb-45 
+      className='overflow-x-clip w-full px-[12%] py-10 scroll-mt-30 min-lg:mt-20 min-lg:mb-45 
     bg-[url("/footer-bg-color.png")] bg-no-repeat bg-center bg-(length:auto_90%) dark:bg-none'
     >
       <motion.h4
@@ -81,7 +92,7 @@ const Contact = ({ isDarkMode }) => {
             type="text"
             placeholder="Enter Your Name"
             required
-            className="flex-1 p-3 outline-none border-[0.5px]
+            className="w-full min-w-0 flex-1 p-3 outline-none border-[0.5px]
              border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
             name="name"
           />
@@ -92,7 +103,7 @@ const Contact = ({ isDarkMode }) => {
             type="email"
             placeholder="Enter Your Mail"
             required
-            className="flex-1 p-3 outline-none border-[0.5px]
+            className="w-full min-w-0 flex-1 p-3 outline-none border-[0.5px]
              border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
             name="email"
           />
@@ -113,14 +124,17 @@ const Contact = ({ isDarkMode }) => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
           type="submit"
-          className="py-3 px-8 w-max flex items-center justify-baseline gap-2 bg-black/80 cursor-pointer hover:-translate-y-1
+          disabled={isSending}
+          className="disabled:opacity-60 disabled:cursor-not-allowed py-3 px-8 w-max flex items-center justify-baseline gap-2 bg-black/80 cursor-pointer hover:-translate-y-1
         text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover"
         >
           Submit now
           <Image src={assets.right_arrow_white} alt="" className="w-4" />
         </motion.button>
 
-        <p className="mt-4">{result}</p>
+        <p className="mt-4" role="status" aria-live="polite">
+          {result}
+        </p>
       </motion.form>
     </motion.div>
   );

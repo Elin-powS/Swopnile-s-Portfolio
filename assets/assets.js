@@ -51,6 +51,8 @@ import cognifyz_logo from "./Cognifyz.png";
 import bitfest_logo from "./Bitfest.png";
 import sofof_tech_logo from "./SOFOF-TECH.png";
 import upskill_logo from "./Upskill-Consultancy.png";
+import ajentica_logo from "./Ajentica.png";
+import markopolo_logo from "./Markopolo.jpg";
 
 // ────────────────────────────────────────────────────────────────────────────────────
 //  Images and icons can be added here in the same format as above.
@@ -110,6 +112,8 @@ export const assets = {
   bitfest_logo,
   sofof_tech_logo,
   upskill_logo,
+  ajentica_logo,
+  markopolo_logo,
 };
 
 // ────────────────────────────────────────────────────────────────────────────────────
@@ -321,10 +325,146 @@ export const workData = [
 // ────────────────────────────────────────────────────────────────────────────────────
 export const experienceData = [
   {
+    icon: assets.markopolo_logo,
+    title: "Markopolo AI",
+    description: "Software Engineer I (Forward Deployment).\nOctober 2026 – Present",
+    link: "",
+    detail: {
+      role: "Software Engineer I – Forward Deployment",
+      period: "October 2026 – Present",
+      location: "Dhaka, Bangladesh (HQ)",
+      summary:
+        "Full-time Software Engineer on the Forward Deployment team at Markopolo AI, working from the company headquarters in Dhaka.",
+      projects: [],
+      timeline: [
+        { date: "October 2026", title: "Joined Markopolo AI", detail: "Started as Software Engineer I – Forward Deployment." },
+      ],
+      techStack: [],
+    },
+  },
+  {
+    icon: assets.ajentica_logo,
+    title: "Ajentica",
+    description: "Software Engineer I (L2).\nSeptember 2026",
+    link: "",
+    detail: {
+      role: "Software Engineer I (L2)",
+      period: "1 September 2026 – 30 September 2026",
+      location: "Dhaka, Bangladesh",
+      summary:
+        "Joined the founding engineering team at Ajentica, an applied AI company building multi-agent, LLM-powered, data-centric systems. I was assigned to the upcoming Lumistry project, which had not yet started during my time there. In the meantime I worked on GorillaHR, the company's in-house project, using the AI-DLC approach and Spec-Driven Development.",
+      projects: [
+        {
+          name: "GorillaHR (In-house Project)",
+          description:
+            "Worked on GorillaHR, Ajentica's in-house project, while waiting for client work to begin.",
+          points: [
+            "Followed the AI-DLC (AI-Driven Development Life Cycle) approach to build with AI assistance across the lifecycle.",
+            "Practiced Spec-Driven Development: writing specifications first and implementing against them.",
+            "Used the project to keep building and sharpening practical engineering skills.",
+          ],
+          tech: ["AI-DLC", "Spec-Driven Development"],
+        },
+        {
+          name: "Lumistry (upcoming client project)",
+          description:
+            "A client project in the areas of Vision-Language Models, OpenCV and machine learning. It was still at the pre-kickoff stage during my tenure.",
+          points: [
+            "Took part in an initial meeting with the client.",
+            "Project work had not started before my tenure ended.",
+          ],
+          tech: ["VLM", "OpenCV", "Machine Learning"],
+        },
+      ],
+      timeline: [
+        { date: "1 September 2026", title: "Joined Ajentica", detail: "Started as Software Engineer I (Level 2) in the founding engineering team." },
+        { date: "September 2026", title: "Client meeting for Lumistry", detail: "Met the client to discuss the upcoming project; it had not yet started." },
+        { date: "30 September 2026", title: "Completed handover", detail: "Formally released after completing handover and clearance." },
+      ],
+      techStack: ["AI-DLC", "Spec-Driven Development"],
+    },
+  },
+  {
     icon: assets.sofof_tech_logo,
     title: "SOFOF TECH",
-    description: "AI Engineer.\nMay 2025 – Present",
+    description: "AI Engineer.\nMay 2025 – August 2026",
     link: "",
+    detail: {
+      role: "AI Engineer",
+      period: "May 2025 – August 2026",
+      summary:
+        "Built AI-powered e-commerce automation and customer-engagement systems: behavior tracking, audience segmentation, marketing automation, customer scoring and conversational voice automation.",
+      projects: [
+        {
+          name: "E-commerce User Activity Tracking SDK",
+          description:
+            "A lightweight JavaScript SDK embedded into e-commerce sites to capture the customer journey with minimal changes to the host application.",
+          points: [
+            "Tracked product views, clicks, searches, add-to-cart, cart updates, checkout initiation, purchases, promotions and custom events.",
+            "Structured events for downstream analytics, segmentation, personalization and automation services.",
+            "Became the data foundation for segmentation, campaigns and user scoring.",
+          ],
+          tech: ["JavaScript", "Event Tracking", "REST APIs"],
+        },
+        {
+          name: "E-commerce Email Marketing Automation",
+          description:
+            "Behavior-driven email workflows covering the customer lifecycle, instead of static customer lists.",
+          points: [
+            "Abandoned cart and abandoned checkout recovery flows.",
+            "Targeted promotional campaigns and re-engagement flows for inactive customers.",
+            "Logic to decide who receives a message, when, and which behavior triggered it.",
+          ],
+          tech: ["Automation Workflows", "Email", "Node.js"],
+        },
+        {
+          name: "Automated Audience Filtering & Segmentation",
+          description:
+            "Dynamically builds campaign audiences from historical and recent user activity.",
+          points: [
+            "Campaign-specific filter conditions so marketers target by interaction patterns, not manual selection.",
+            "Integrated with the marketing automation pipeline: behavior, audience, campaign.",
+          ],
+          tech: ["MongoDB", "Segmentation", "Automation"],
+        },
+        {
+          name: "Numerical User Profiling & Behavioral Scoring",
+          description:
+            "Turns raw activity into structured numerical profiles that other services can consume quickly.",
+          points: [
+            "Schema-based user model on MongoDB for consistent customer and behavior attributes.",
+            "Engagement and behavior scores to compare, filter and prioritize users.",
+            "Avoids reprocessing large volumes of raw events for frequently needed attributes.",
+          ],
+          tech: ["MongoDB", "Schema Design", "Scoring"],
+        },
+        {
+          name: "Voice-Based Promotional Automation",
+          description:
+            "AI voice agent for promotional outbound calls, replacing pre-recorded messages with real conversations.",
+          points: [
+            "Built the core voice-agent behavior and conversational flow.",
+            "Integrated ElevenLabs for voice generation and Twilio for telephony.",
+            "Voice-agent component was substantially completed; the full campaign-to-calling pipeline was still in development when I left.",
+          ],
+          tech: ["ElevenLabs", "Twilio", "Conversational AI"],
+        },
+      ],
+      pipeline: [
+        "User Activity",
+        "Event Tracking",
+        "Behavioral Data",
+        "User Scoring",
+        "Audience Filtering",
+        "Campaign Selection",
+        "Automated Communication",
+      ],
+      timeline: [
+        { date: "May 2025", title: "Joined SOFOF TECH", detail: "Started as AI Engineer on the e-commerce automation ecosystem." },
+        { date: "August 2026", title: "Voice agent delivered", detail: "Voice-agent component substantially complete; the production calling pipeline continued after my departure." },
+      ],
+      techStack: ["JavaScript", "Node.js", "MongoDB", "ElevenLabs", "Twilio", "REST APIs", "Automation Workflows"],
+    },
   },
   {
     icon: assets.upskill_logo,
@@ -332,6 +472,41 @@ export const experienceData = [
     description:
       "Lead Teacher - Prompt Engineering and AI Automation with no code tools(n8n).\nFebruary 2026 – Present",
     link: "",
+    detail: {
+      role: "Lead Instructor",
+      period: "February 2026 – Present",
+      summary:
+        "Delivering professional, hands-on AI training for learners based in the United States, focused on building real applications rather than theory alone.",
+      projects: [
+        {
+          name: "AI Automation & Prompt Engineering",
+          description:
+            "Practical course on prompt design, AI-powered workflows and business automation.",
+          points: [
+            "Teach effective prompting and using modern AI tools for business and productivity problems.",
+            "Guide students in building automations with n8n and AI APIs: content generation, information processing, data transformation and process automation.",
+          ],
+          tech: ["n8n", "Prompt Engineering", "AI APIs"],
+        },
+        {
+          name: "AI Engineering (Current)",
+          description:
+            "Foundations for building practical AI and machine-learning applications.",
+          points: [
+            "Python, ML fundamentals, preprocessing and feature engineering, supervised and unsupervised learning, model evaluation.",
+            "Neural networks and deep learning fundamentals.",
+            "LLM applications, AI agents, RAG and vector databases, API integration.",
+            "Hands-on classes with coding exercises and projects, explained for mixed technical levels.",
+          ],
+          tech: ["Python", "Machine Learning", "LLMs", "RAG", "AI Agents"],
+        },
+      ],
+      timeline: [
+        { date: "February 2026", title: "Started teaching", detail: "Began as Lead Instructor at UpSkill Consultancy." },
+        { date: "Present", title: "Two courses running", detail: "AI Automation & Prompt Engineering, and AI Engineering." },
+      ],
+      techStack: ["Python", "n8n", "Prompt Engineering", "LLMs", "RAG", "Machine Learning"],
+    },
   },
   {
     icon: assets.transformsAI_logo,
@@ -339,6 +514,44 @@ export const experienceData = [
     description:
       "Junior AI/ML Engineer - Computer Vision.\nApril 2025 – September 2025",
     link: "",
+    detail: {
+      role: "Junior AI/ML Engineer – Computer Vision",
+      period: "April 2025 – September 2025",
+      summary:
+        "Worked on two large-scale, real-world computer vision systems built on CCTV video: an AI-powered Hajj monitoring system and a car showroom intelligence platform.",
+      projects: [
+        {
+          name: "AI-Powered Hajj Monitoring & Safety System",
+          description:
+            "Multi-module system that analyzes CCTV footage to automate monitoring that would otherwise need constant human observation. I developed five modules.",
+          points: [
+            "Security guard detection: detect people and identify guard personnel in continuous CCTV streams.",
+            "Buffet monitoring and hygiene violations: YOLO detection plus Vision-Language Models to flag empty chafing dishes, dirty plates, floor garbage and missing protective equipment, with automatic alerts.",
+            "Cleaner identification with little training data: YOLO person detection, upper-body color histogram matching and hash-map reference lookup, without a dedicated classifier.",
+            "Abandoned object / dirt / unwanted item detection feeding automated incident alerts.",
+            "Pilgrim headcount: person counting with reduced duplicate counts across continuous video.",
+          ],
+          tech: ["YOLO", "Vision-Language Models", "OpenCV", "Video Analytics"],
+        },
+        {
+          name: "AI-Powered Car Showroom Intelligence System",
+          description:
+            "Analytics platform that turns customer, employee and vehicle interactions in showroom CCTV into measurable insights.",
+          points: [
+            "Customer-employee interaction and conversation/meeting tracking over time, not frame by frame.",
+            "Gender detection tailored to a Middle Eastern customer population.",
+            "Customer-vehicle interaction scoring from duration, proximity and engagement signals.",
+            "Contributed to the end-to-end pipeline from raw footage to structured showroom intelligence.",
+          ],
+          tech: ["Person Detection", "Interaction Analysis", "Scoring Algorithms", "Video Tracking"],
+        },
+      ],
+      timeline: [
+        { date: "April 2025", title: "Joined Transforms AI", detail: "Started as Junior AI/ML Engineer during the final year of my degree." },
+        { date: "September 2025", title: "Wrapped up", detail: "Completed work on the Hajj monitoring and showroom intelligence systems." },
+      ],
+      techStack: ["YOLO", "VLMs", "Computer Vision", "Python", "Video Analytics", "Classical CV"],
+    },
   },
   {
     icon: assets.ostad_logo,
@@ -346,6 +559,30 @@ export const experienceData = [
     description:
       "Teaching Assistant - AI Agent Development with No Code Tool for Non-Coders.\n August 2025 – April 2026",
     link: "",
+    detail: {
+      role: "Teaching Assistant",
+      period: "August 2025 – April 2026",
+      summary:
+        "Supported and mentored learners across 14+ batches in AI and technology programs, from software engineers to complete non-programmers.",
+      projects: [
+        {
+          name: "AI & Technology Training Programs",
+          description:
+            "Courses: AI Engineering, Machine Learning, AI Automation, and AI Automation for Non-Coders.",
+          points: [
+            "Assisted instructors in live classes, practical sessions, assignments and projects.",
+            "Helped learners debug code, solve implementation issues and build AI-powered apps and automation workflows.",
+            "Bridged theory and practice through project-based learning.",
+          ],
+          tech: ["Machine Learning", "AI Automation", "Python"],
+        },
+      ],
+      timeline: [
+        { date: "August 2025", title: "Joined Ostad", detail: "Started as Teaching Assistant." },
+        { date: "April 2026", title: "Completed 14+ batches", detail: "Concluded the teaching-assistant role." },
+      ],
+      techStack: ["Python", "Machine Learning", "AI Automation", "n8n"],
+    },
   },
   {
     icon: assets.cognifyz_logo,
@@ -360,6 +597,42 @@ export const experienceData = [
     description:
       "Served as the Class Representative during my first and final years of academic life. \n2020-2021 and 2024-2025",
     link: "",
+    detail: {
+      role: "Class Representative, KUET CSE",
+      period: "2020 – 2021 and 2024 – 2025",
+      location: "Khulna University of Engineering & Technology",
+      summary:
+        "Trusted by my batch to serve as Class Representative in both my first and final years, acting as the link between students, teachers and the department.",
+      projects: [
+        {
+          name: "Student–Faculty Coordination",
+          description:
+            "Represented my classmates and worked closely with teachers on everyday academic matters.",
+          points: [
+            "Communicated between students and teachers on class schedules, notices and academic matters.",
+            "Raised classmates' concerns and helped resolve them with faculty.",
+            "Kept the batch informed and organized throughout the year.",
+          ],
+          tech: ["Communication", "Coordination", "Leadership"],
+        },
+        {
+          name: "Department Events & Activities",
+          description:
+            "The CSE department runs many events and programs, and the CR is involved in making them happen.",
+          points: [
+            "Worked with teachers and the department on organizing events and activities.",
+            "Mobilized classmates to participate and helped with arrangements.",
+            "Balanced these responsibilities with my own coursework across the first and final years.",
+          ],
+          tech: ["Event Coordination", "Teamwork", "Responsibility"],
+        },
+      ],
+      timeline: [
+        { date: "2020 – 2021", title: "CR, first year", detail: "Served my batch in the first year of the CSE program." },
+        { date: "2024 – 2025", title: "CR, final year", detail: "Trusted again to represent the batch in the final year." },
+      ],
+      techStack: ["Leadership", "Communication", "Coordination", "Teamwork"],
+    },
   },
   {
     icon: assets.bitfest_logo,
@@ -367,6 +640,40 @@ export const experienceData = [
     description:
       "Played a key role as a Senior Executive Member in KUET CSE’s largest event, Bitfest 2025.",
     link: "",
+    detail: {
+      role: "Senior Executive Member",
+      period: "2025",
+      location: "KUET CSE",
+      summary:
+        "Senior Executive Member for Bitfest 2025, the largest event of KUET CSE. I was part of the three-person team that ran the entire Datathon, and also contributed to other parts of the festival.",
+      projects: [
+        {
+          name: "Bitfest 2025 Datathon",
+          description:
+            "A three-person team handled the full Datathon, end to end. My responsibilities were sponsorship and the competition itself.",
+          points: [
+            "Sponsorship: found and secured sponsors for the Datathon.",
+            "Dataset: helped prepare the dataset participants worked with.",
+            "Competition design: helped create the competition and its problem setup.",
+            "Worked closely with the two other organizers to run the event from planning to completion.",
+          ],
+          tech: ["Sponsorship", "Datasets", "Competition Design", "Event Management"],
+        },
+        {
+          name: "Wider Bitfest Organizing",
+          description:
+            "Beyond the Datathon, I got involved with other parts of Bitfest alongside the rest of the organizing team.",
+          points: [
+            "Supported other segments of the festival together with fellow executive members.",
+          ],
+          tech: ["Teamwork", "Event Management"],
+        },
+      ],
+      timeline: [
+        { date: "2025", title: "Senior Executive Member", detail: "Helped organize Bitfest 2025, KUET CSE's largest event, including the Datathon." },
+      ],
+      techStack: ["Sponsorship", "Datasets", "Competition Design", "Event Management", "Teamwork"],
+    },
   },
 ];
 
@@ -417,10 +724,10 @@ export const infoList = [
   {
     icon: assets.project_icon,
     iconDark: assets.project_icon_dark,
-    title: "AI Engineer at SOFOF TECH",
-    description: "",
+    title: "Software Engineer I (Forward Deployment) at Markopolo AI",
+    description: "Current Role",
     more_description:
-      "As an AI Engineer at SOFOF TECH, I develop machine learning models, AI automation systems, and data-driven solutions for real-world applications. My work includes building intelligent workflows, automating business processes, developing AI-powered systems, and working with data scraping and processing pipelines to improve efficiency and scalability.",
+      "As a Software Engineer I (Forward Deployment) at Markopolo AI, I develop and deploy production-ready AI solutions for real-world customer use cases. My responsibilities include building AI/ML applications, integrating models and AI agents with existing systems, developing customized workflows, debugging deployment issues, and working closely with customers and engineering teams to deliver reliable AI solutions.",
   },
 ];
 

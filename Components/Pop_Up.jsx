@@ -1,8 +1,10 @@
 import React from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import useModalA11y from "./useModalA11y";
 
 const Pop_Up = ({ isOpen, selectedAchievement, isDarkMode, onClose }) => {
+  useModalA11y(isOpen, onClose);
   return (
     <AnimatePresence>
       {isOpen && selectedAchievement && (

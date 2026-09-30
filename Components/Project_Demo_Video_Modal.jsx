@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "motion/react";
+import useModalA11y from "./useModalA11y";
 
 /**
  * Project_Demo_Video_Modal
@@ -9,6 +10,7 @@ import { motion, AnimatePresence } from "motion/react";
  *  - onClose  : callback to close the modal
  */
 const Project_Demo_Video_Modal = ({ project, onClose }) => {
+  useModalA11y(!!project, onClose);
   if (!project) return null;
 
   /* ── Resolve embed URL ── */

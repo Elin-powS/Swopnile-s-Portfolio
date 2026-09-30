@@ -40,6 +40,18 @@ const Project_Image_Modal = ({ images, startIndex = 0, onClose }) => {
     return () => { document.body.style.overflow = ""; };
   }, []);
 
+  /* ── Mouse / touch drag to change image ── */
+  const SWIPE_DISTANCE = 80;
+  const SWIPE_VELOCITY = 500;
+  const handleDragEnd = (_, info) => {
+    if (images.length < 2) return;
+    if (info.offset.x < -SWIPE_DISTANCE || info.velocity.x < -SWIPE_VELOCITY) {
+      goNext();
+    } else if (info.offset.x > SWIPE_DISTANCE || info.velocity.x > SWIPE_VELOCITY) {
+      goPrev();
+    }
+  };
+
   const variants = {
     enter: (dir) => ({ x: dir > 0 ? "100%" : "-100%", opacity: 0 }),
     center: { x: 0, opacity: 1 },
@@ -96,8 +108,15 @@ const Project_Image_Modal = ({ images, startIndex = 0, onClose }) => {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute inset-0 w-full h-full object-contain"
+                className={`absolute inset-0 w-full h-full object-contain select-none ${
+                  images.length > 1 ? "cursor-grab active:cursor-grabbing" : ""
+                }`}
                 draggable={false}
+                drag={images.length > 1 ? "x" : false}
+                dragSnapToOrigin
+                dragElastic={0.3}
+                dragMomentum={false}
+                onDragEnd={handleDragEnd}
               />
             </AnimatePresence>
 
@@ -107,18 +126,18 @@ const Project_Image_Modal = ({ images, startIndex = 0, onClose }) => {
                 <button
                   onClick={goPrev}
                   aria-label="Previous image"
-                  className="absolute left-0 top-0 h-full w-1/4 z-10 group flex items-center justify-start pl-3 focus:outline-none"
+                  className="absolute left-0 top-0 h-full w-16 z-10 group flex items-center justify-start pl-3 focus:outline-none"
                 >
-                  <span className="w-9 h-9 flex items-center justify-center rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-lg">
+                  <span className="w-9 h-9 flex items-center justify-center rounded-full bg-black/40 text-white opacity-60 group-hover:opacity-100 transition-opacity duration-200 text-lg">
                     ‹
                   </span>
                 </button>
                 <button
                   onClick={goNext}
                   aria-label="Next image"
-                  className="absolute right-0 top-0 h-full w-1/4 z-10 group flex items-center justify-end pr-3 focus:outline-none"
+                  className="absolute right-0 top-0 h-full w-16 z-10 group flex items-center justify-end pr-3 focus:outline-none"
                 >
-                  <span className="w-9 h-9 flex items-center justify-center rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-lg">
+                  <span className="w-9 h-9 flex items-center justify-center rounded-full bg-black/40 text-white opacity-60 group-hover:opacity-100 transition-opacity duration-200 text-lg">
                     ›
                   </span>
                 </button>
@@ -152,7 +171,7 @@ const Project_Image_Modal = ({ images, startIndex = 0, onClose }) => {
             <p className="mt-3 text-white/30 text-xs flex items-center gap-2">
               <kbd className="px-1.5 py-0.5 rounded border border-white/20 font-mono text-[10px]">←</kbd>
               <kbd className="px-1.5 py-0.5 rounded border border-white/20 font-mono text-[10px]">→</kbd>
-              to navigate
+              or drag the image to navigate
               <span className="mx-1 opacity-40">·</span>
               <kbd className="px-1.5 py-0.5 rounded border border-white/20 font-mono text-[10px]">Esc</kbd>
               to close

@@ -1,16 +1,19 @@
 import { assets, experienceData } from "@/assets/assets";
 import Image from "next/image";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "motion/react";
+import Experience_Detail_Modal from "./Experience_Detail_Modal";
 
 const Experiences = ({ isDarkMode }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [selectedExperience, setSelectedExperience] = useState(null);
+  const closeModal = useCallback(() => setSelectedExperience(null), []);
   const intervalRef = useRef(null);
 
   // Auto-swipe functionality
   useEffect(() => {
-    if (!isHovered && experienceData.length > 1) {
+    if (!isHovered && !selectedExperience && experienceData.length > 1) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) =>
           prevIndex === experienceData.length - 1 ? 0 : prevIndex + 1,
@@ -23,7 +26,7 @@ const Experiences = ({ isDarkMode }) => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isHovered]);
+  }, [isHovered, selectedExperience]);
 
   // Manual navigation functions
   const goToSlide = (index) => {
@@ -90,16 +93,13 @@ const Experiences = ({ isDarkMode }) => {
         transition={{ duration: 0.5, delay: 0.7 }}
         className="text-center max-w-2xl mx-auto mt-4 mb-8 font-Ovo px-4"
       >
-        I have hands-on experience in AI/ML, computer vision, AI automation, and
-        software development. Currently, I work as an AI Engineer at SOFOF TECH,
-        where I develop machine learning models, AI automation systems, and data
-        scraping solutions. Previously, I worked as an AI/ML Engineer – Computer
-        Vision at Transforms AI. I also serve as a Lead Teacher at Upskill
-        Consultancy, teaching Prompt Engineering and AI Automation with n8n, and
-        previously worked as a Teaching Assistant at Ostad for AI automation
-        courses. Additionally, I completed an AI/ML Internship at Cognifyz
-        Technologies. I am passionate about building impactful AI-driven
-        solutions.
+        I build AI-driven software across automation, computer vision and
+        applied AI. I currently work as a Software Engineer (Forward
+        Deployment) at Markopolo AI. Before that I was an AI Engineer at SOFOF TECH (e-commerce automation and voice
+        agents) and a Junior AI/ML Engineer at Transforms AI (computer
+        vision). I also teach: Lead Instructor at UpSkill Consultancy and
+        former Teaching Assistant at Ostad. Click a card to see the projects and
+        timeline behind each role.
       </motion.p>
 
       {/* 3D Carousel Container - Mobile Optimized */}
@@ -161,7 +161,7 @@ const Experiences = ({ isDarkMode }) => {
         <div className="relative w-full h-full flex items-center justify-center">
           {getVisibleCards().map(
             (
-              { icon, title, description, link, position, originalIndex },
+              { icon, title, description, link, detail, position, originalIndex },
               index,
             ) => {
               const isCenter = position === 0;
@@ -236,7 +236,20 @@ const Experiences = ({ isDarkMode }) => {
                     filter: !isCenter ? "blur(2px)" : "blur(0px)",
                     transformStyle: "preserve-3d",
                   }}
-                  onClick={() => !isCenter && goToSlide(originalIndex)}
+                  onClick={() =>
+                    isCenter
+                      ? detail && setSelectedExperience(experienceData[originalIndex])
+                      : goToSlide(originalIndex)
+                  }
+                  onKeyDown={(e) => {
+                    if (isCenter && detail && (e.key === "Enter" || e.key === " ")) {
+                      e.preventDefault();
+                      setSelectedExperience(experienceData[originalIndex]);
+                    }
+                  }}
+                  role={isCenter && detail ? "button" : undefined}
+                  tabIndex={isCenter && detail ? 0 : undefined}
+                  aria-label={isCenter && detail ? `View ${title} experience details` : undefined}
                   whileHover={isCenter ? { scale: 1.05, y: -10 } : {}}
                 >
                   <div
@@ -284,6 +297,12 @@ const Experiences = ({ isDarkMode }) => {
                         ))}
                       </div>
                     </div>
+
+                    {isCenter && detail && (
+                      <p className="mt-4 text-xs sm:text-sm font-medium text-darkHover dark:text-purple-300">
+                        View projects &amp; timeline →
+                      </p>
+                    )}
 
                     {isCenter && link && (
                       <div className="mt-4">
@@ -342,6 +361,12 @@ const Experiences = ({ isDarkMode }) => {
           </div>
         </div>
       </motion.div>
+
+      <Experience_Detail_Modal
+        isOpen={!!selectedExperience}
+        experience={selectedExperience}
+        onClose={closeModal}
+      />
     </motion.div>
   );
 };

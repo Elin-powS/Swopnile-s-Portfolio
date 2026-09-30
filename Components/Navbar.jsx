@@ -1,5 +1,4 @@
 import { assets } from "@/assets/assets";
-import { Fascinate } from "next/font/google";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -14,13 +13,10 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
     sideMenuRef.current.style.transform = "translateX(16rem)";
   };
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (scrollY > 50) {
-        setIsScroll(true);
-      } else {
-        setIsScroll(false);
-      }
-    });
+    const onScroll = () => setIsScroll(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -36,15 +32,15 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                 : ""
             }`}
       >
-        <a href="#top">
+        <a href="#home">
           <Image
             src={assets.logo}
             alt=""
-            className="w-44 max-sm:w-29 max-sm:mt-3 cursor-pointer"
+            className="w-44 max-sm:w-29 max-sm:mt-3 cursor-pointer shrink-0"
           />
         </a>
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
+          className={`hidden xl:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
             isScroll
               ? ""
               : " bg-white/50 shadow-sm dark:border dark:border-white/50 dark:bg-transparent"
@@ -87,7 +83,10 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           </li>
         </ul>
         <div className="flex gap-4 ">
-          <button onClick={() => setIsDarkMode((prev) => !prev)}>
+          <button
+            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+            onClick={() => setIsDarkMode((prev) => !prev)}
+          >
             <Image
               src={isDarkMode ? assets.sun_icon : assets.moon_icon}
               alt=""
@@ -96,7 +95,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           </button>
           <a
             href="#contact"
-            className="group font-Ovo hidden lg:flex items-center gap-3 px-8 py-2.5 border cursor-pointer hover:-translate-y-1
+            className="group font-Ovo hidden xl:flex items-center gap-3 px-8 py-2.5 border cursor-pointer hover:-translate-y-1
        hover:bg-lightHover border-gray-500 rounded-full ml-4 dark:border-white/50 dark:hover:bg-darkHover"
           >
             Contact
@@ -107,7 +106,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             />
           </a>
 
-          <button className="block md:hidden ml-3" onClick={openMenu}>
+          <button
+            className="block xl:hidden ml-3"
+            aria-label="Open menu"
+            onClick={openMenu}
+          >
             <Image
               src={isDarkMode ? assets.menu_white : assets.menu_black}
               alt=""
@@ -120,10 +123,17 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
         <ul
           ref={sideMenuRef}
-          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64
+          className="flex xl:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64
          z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white"
         >
-          <div className="absolute right-6 top-6" onClick={closeMenu}>
+          <div
+            className="absolute right-6 top-6"
+            role="button"
+            tabIndex={0}
+            aria-label="Close menu"
+            onClick={closeMenu}
+            onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && closeMenu()}
+          >
             <Image
               src={isDarkMode ? assets.close_white : assets.close_black}
               alt=""
@@ -131,7 +141,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             />
           </div>
           <li>
-            <a className=" font-Ovo" onClick={closeMenu} href="#top">
+            <a className=" font-Ovo" onClick={closeMenu} href="#home">
               Home
             </a>
           </li>
@@ -146,12 +156,12 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             </a>
           </li>
           <li>
-            <a className="font-Outfit" href="#projects">
+            <a className="font-Ovo" onClick={closeMenu} href="#projects">
               Projects
             </a>
           </li>
           <li>
-            <a className="font-Outfit" href="#publications">
+            <a className="font-Ovo" onClick={closeMenu} href="#publications">
               Publications
             </a>
           </li>
